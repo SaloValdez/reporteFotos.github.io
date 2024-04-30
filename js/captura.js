@@ -1,21 +1,6 @@
 $(document).ready(function() {
-
-
     $(".DpFotos").prop('disabled', true);
-    
-
-
-
-
 });
-
-
-
-function mostrarIndicaciones(){
-    
-}
-
-
 
 
 $(".tipoTrabajo").change(function() {
@@ -76,25 +61,14 @@ $btnIndicacionesCerrar.addEventListener("click", () => {
 
 
 
-
-
-
-
 const $boton = document.querySelector("#btnGenerarReporte ");
 $boton.addEventListener("click", () => {
     var txtSot = $('#sotReporte').val();
-
- 
     // var  numeros = '77765439';
     let arraySOT = txtSot.split('');
-
     // console.log(arraySOT);
-
     valorDP = $('#DpFotos').val();
-
-
     // console.log(valorDP);
-
     if(txtSot.length == ''){
         alert('Ingresar Sot');
     
@@ -114,6 +88,12 @@ $boton.addEventListener("click", () => {
         generar_dp40(arraySOT);
     }else if(valorDP =='dp41'){
         generar_dp41(arraySOT);
+    }else if(valorDP =='1play'){
+        generar_dp03(arraySOT);
+        generar_dp01(arraySOT);
+        generar_dp16(arraySOT);
+        generar_dp15(arraySOT);
+        generar_dp17(arraySOT);
     }else if(valorDP == '2playtel'){
         generar_dp03(arraySOT);
         generar_dp01(arraySOT);
@@ -141,26 +121,10 @@ $boton.addEventListener("click", () => {
     }
 
 
-$('#txtSotGenerando').val(txtSot);
+    $('#txtSotGenerando').val(txtSot);
+    $('#sotReporte').val('');
 
-   $('#sotReporte').val('');
- 
-
-
-      
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -271,8 +235,6 @@ function generar_dp16(arraySot){
 }
 
 
-
-
 // DP15
 function generar_dp15 (arraySot){
     console.log(arraySot);
@@ -332,9 +294,6 @@ function generar_dp15 (arraySot){
                 }); 
     }
     
-
-
-
 // DP17
 function generar_dp17(arraySot){
     console.log(arraySot);
@@ -453,8 +412,6 @@ function generar_dp17(arraySot){
                   }); 
     }
     
-
-
 
 // DP 01 FOTO FACHADA
 function generar_dp01 (arraySot){
