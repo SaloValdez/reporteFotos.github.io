@@ -91,7 +91,7 @@ ol span {
                         height: 100%;
                         backdrop-filter: blur(4px);
                         z-index: 20;
-                        display: none;
+                        /* display: none; */
                         position: fixed;
                     
                     
@@ -388,9 +388,11 @@ select{
         }
         .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(3){
             margin-right: -4px;
+            width: 4px;
         }
         .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(2){
             margin-right: -4px;
+            
         }
         .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(1){
             margin-right: -4px;
