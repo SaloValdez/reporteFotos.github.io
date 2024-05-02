@@ -1,6 +1,21 @@
 $(document).ready(function() {
+
+
     $(".DpFotos").prop('disabled', true);
+    
+
+
+
+
 });
+
+
+
+function mostrarIndicaciones(){
+    
+}
+
+
 
 
 $(".tipoTrabajo").change(function() {
@@ -12,14 +27,14 @@ $(".tipoTrabajo").change(function() {
                         
                             var tipoAtencion = {
                                         "sel":"Seleccione...",
-                                        "dp01":"DP01  (fachada)",
-                                        "dp03": "DP03  (fat)",
-                                        "dp15":"DP15  (serie/niveles)",
-                                        "dp16":"DP16  (ping)",
-                                        "dp17":"DP17  (config. wifi)",
-                                        "dp27":"DP27  (telefono)",
-                                        "dp40":"DP40  (ip tv)",
-                                        "dp41":"DP 41  (resolución tv)",
+                                        "dp01":"DP01",
+                                        "dp03": "DP 03",
+                                        "dp15":"DP 15",
+                                        "dp16":"DP 16",
+                                        "dp17":"DP 17",
+                                        "dp27":"DP 27",
+                                        "dp40":"DP 40",
+                                        "dp41":"DP 41",
                                         "1play":"(1play) Internet",
                                         "2playtel":"(2play) Internet + Telef.",
                                         "2playIptv":"(2play) Internet + Iptv",
@@ -61,14 +76,25 @@ $btnIndicacionesCerrar.addEventListener("click", () => {
 
 
 
+
+
+
+
 const $boton = document.querySelector("#btnGenerarReporte ");
 $boton.addEventListener("click", () => {
     var txtSot = $('#sotReporte').val();
+
+ 
     // var  numeros = '77765439';
     let arraySOT = txtSot.split('');
+
     // console.log(arraySOT);
+
     valorDP = $('#DpFotos').val();
+
+
     // console.log(valorDP);
+
     if(txtSot.length == ''){
         alert('Ingresar Sot');
     
@@ -121,25 +147,41 @@ $boton.addEventListener("click", () => {
     }
 
 
-    $('#txtSotGenerando').val(txtSot);
-    $('#sotReporte').val('');
+$('#txtSotGenerando').val(txtSot);
 
+   $('#sotReporte').val('');
+ 
+
+
+      
 });
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 function generar_dp16(arraySot){
-    $objetivo2 = document.querySelector("#contenedor_ping");
+    $objetivo2 = document.querySelector("#contenedor_dp16");
     $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
   
-   $("#sot-numero1-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[0]+".png");
-   $("#sot-numero2-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[1]+".png");
-   $("#sot-numero3-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[2]+".png");
-   $("#sot-numero4-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[3]+".png");
-   $("#sot-numero5-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[4]+".png");
-   $("#sot-numero6-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[5]+".png");
-   $("#sot-numero7-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[6]+".png");
-   $("#sot-numero8-ping").attr("src","./img/reportes/numerosDp16/"+ arraySot[7]+".png");
+   $("#sot-numero1-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[0]+".png");
+   $("#sot-numero2-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[1]+".png");
+   $("#sot-numero3-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[2]+".png");
+   $("#sot-numero4-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[3]+".png");
+   $("#sot-numero5-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[4]+".png");
+   $("#sot-numero6-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[5]+".png");
+   $("#sot-numero7-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[6]+".png");
+   $("#sot-numero8-dp16_serie").attr("src","./img/reportes/numerosDp16/"+ arraySot[7]+".png");
    
         var d = new Date();
         var month = d.getMonth()+1;
@@ -166,15 +208,15 @@ function generar_dp16(arraySot){
         hora3= cadenaHora.substr(-2,1); // 2
         hora4= cadenaHora.substr(-1,3); // 4
          // hora CMD PING
-        $("#sot-hora1-ping").attr("src","./img/reportes/numerosDp16/"+ hora1+".png");
-        $("#sot-hora2-ping").attr("src","./img/reportes/numerosDp16/"+ hora2+".png");
-        $("#sot-hora3-ping").attr("src","./img/reportes/numerosDp16/"+ hora3+".png");
-        $("#sot-hora4-ping").attr("src","./img/reportes/numerosDp16/"+ hora4+".png");
+        $("#hora_cmd_numero1").attr("src","./img/reportes/numerosDp16/"+ hora1+".png");
+        $("#hora_cmd_numero2").attr("src","./img/reportes/numerosDp16/"+ hora2+".png");
+        $("#hora_cmd_numero4").attr("src","./img/reportes/numerosDp16/"+ hora3+".png");
+        $("#hora_cmd_numero5").attr("src","./img/reportes/numerosDp16/"+ hora4+".png");
         // hora barrar de inicio
-        $("#sot-hora1-barraInicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora1+".png");
-        $("#sot-hora2-barraInicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora2+".png");
-        $("#sot-hora3-barraInicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora3+".png");
-        $("#sot-hora4-barraInicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora4+".png");
+        $("#numero1-hora_inicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora1+".png");
+        $("#numero2-hora_inicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora2+".png");
+        $("#numero4-hora_inicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora3+".png");
+        $("#numero5-hora_inicio").attr("src","./img/reportes/numerosDp16/hora/h"+hora4+".png");
 
 
         
@@ -198,24 +240,24 @@ function generar_dp16(arraySot){
             dia1= cadenaDia.substr(0,1); // 2
             dia2= cadenaDia.substr(1,1); // 0
             // fecha cmd  PING
-            $("#dia1-ping").attr("src","./img/reportes/numerosDp16/"+ dia1+".png");
-            $("#dia2-ping").attr("src","./img/reportes/numerosDp16/"+ dia2+".png");
-            $("#mes1-ping").attr("src","./img/reportes/numerosDp16/"+ mes1+".png");
-            $("#mes2-ping").attr("src","./img/reportes/numerosDp16/"+ mes2+".png");
-            $("#anio1-ping").attr("src","./img/reportes/numerosDp16/"+ anio1+".png");
-            $("#anio2-ping").attr("src","./img/reportes/numerosDp16/"+ anio2+".png");
-            $("#anio3-ping").attr("src","./img/reportes/numerosDp16/"+ anio3+".png");
-            $("#anio4-ping").attr("src","./img/reportes/numerosDp16/"+ anio4+".png");
+            $("#numero1_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ dia1+".png");
+            $("#numero2_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ dia2+".png");
+            $("#numero3_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ mes1+".png");
+            $("#numero4_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ mes2+".png");
+            $("#numero5_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ anio1+".png");
+            $("#numero6_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ anio2+".png");
+            $("#numero7_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ anio3+".png");
+            $("#numero8_cmd_fecha").attr("src","./img/reportes/numerosDp16/"+ anio4+".png");
     
             // fecha barra de tareas PING
-            $("#dia1-barra").attr("src","./img/reportes/numerosDp16/hora/h"+dia1+".png");
-            $("#dia2-barra").attr("src","./img/reportes/numerosDp16/hora/h"+dia2+".png");
-            $("#mes1-barra").attr("src","./img/reportes/numerosDp16/hora/h"+mes1+".png");
-            $("#mes2-barra").attr("src","./img/reportes/numerosDp16/hora/h"+mes2+".png");
-            $("#anio1-barra").attr("src","./img/reportes/numerosDp16/hora/h"+anio1+".png");
-            $("#anio2-barra").attr("src","./img/reportes/numerosDp16/hora/h"+anio2+".png");
-            $("#anio3-barra").attr("src","./img/reportes/numerosDp16/hora/h"+anio3+".png");
-            $("#anio4-barra").attr("src","./img/reportes/numerosDp16/hora/h"+anio4+".png");
+            $("#numero1-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+dia1+".png");
+            $("#numero2-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+dia2+".png");
+            $("#numero3-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+mes1+".png");
+            $("#numero4-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+mes2+".png");
+            $("#numero5-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+anio1+".png");
+            $("#numero6-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+anio2+".png");
+            $("#numero7-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+anio3+".png");
+            $("#numero8-fecha-inicio").attr("src","./img/reportes/numerosDp16/hora/h"+anio4+".png");
 
 
             html2canvas($objetivo2) // Llamar a html2canvas y pasarle el elemento
@@ -233,6 +275,8 @@ function generar_dp16(arraySot){
             enlace.click();
     });
 }
+
+
 
 
 // DP15
@@ -294,6 +338,9 @@ function generar_dp15 (arraySot){
                 }); 
     }
     
+
+
+
 // DP17
 function generar_dp17(arraySot){
     console.log(arraySot);
@@ -412,6 +459,8 @@ function generar_dp17(arraySot){
                   }); 
     }
     
+
+
 
 // DP 01 FOTO FACHADA
 function generar_dp01 (arraySot){

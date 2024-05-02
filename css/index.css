@@ -43,9 +43,13 @@ body{
     display:block;
     /* display: none; */
     display:flex;
+    z-index: 40;
 }
 
-
+.contenedorCanvas canvas{
+    width: 150px !important;
+    height: 150px !important;
+}
 
 .btnIndicaciones,.btnIndicacionesCerrar{
     background-color: #dddbdb;
@@ -88,7 +92,7 @@ ol span {
                         backdrop-filter: blur(4px);
                         z-index: 20;
                     /* display: none; */
-                    position: fixed;
+                        position: fixed;
                     
                     
                     }
@@ -235,208 +239,6 @@ ol span {
    
    } */
 
-   .contenedorCanvas canvas {
-    width: 150px !important;
-    height: 150px !important;
-    margin :2px 2px -3px  2px;
-   }
-
-.imagenReporte_dp16{
-    width: 4104px;
-    height: 1992px;
-}
-
-.contenedor_ping{
-    background-color: #3c454c;
-    /* width: auto; */
-    display: block;
-    position: absolute;
-}
-
-
-.contenedor-fecha{
-    /* background-color: red; */
-    position: absolute;
-    top: 1285px;
-    left: 785px;
-    width: 400px;
-    
-    display: flex;
-}
-
-.contenedor-fecha .dia img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -8px;
-    margin-top: -1px;
-}
-
-.contenedor-fecha .slash img:nth-child(1) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -2px;
-    margin-top: -1px;
-}
-
-.contenedor-fecha .mes img:nth-child(1) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -2px;
-    margin-top: -1px;
-}
-.contenedor-fecha .mes img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -6px;
-    margin-top: -1px;
-}
-
-.contenedor-fecha .anio img:nth-child(1) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -2px;
-    margin-top: -1px;
-}
-.contenedor-fecha .anio img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -4px;
-    margin-top: -1px;
-}
-.contenedor-fecha .anio img:nth-child(3) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -5px;
-    margin-top: -1px;
-}
-.contenedor-fecha .anio img:nth-child(4) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -3px;
-    margin-top: -1px;
-}
-
-.contenedor-hora .hora img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -4px;
-    margin-top: -1px;
-}
-
-
-.contenedor-hora .minutos img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-left: -5px;
-    margin-top: -1px;
-}
-
-
-
-.barraInicio-hora img:nth-child(4) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    /* margin-left: -5px; */
-    margin-top: 0px;
-}
-
-.barraInicio-hora img:nth-child(3) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-right: 0px;
-    margin-top: -1px;
-}
-.barraInicio-hora img:nth-child(2) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-right: -3px;
-    margin-top: -1px;
-}
-.barraInicio-hora img:nth-child(1) {
-    /* background: rgb(184, 14, 14);
-    border: 1px solid blue; */
-    margin-right: 0px;
-    margin-top: -1px;
-}
-
-
-.contenedor-hora{
-    /* background-color: yellowgreen; */
-    position: absolute;
-    top: 1427px;
-    left: 788px;
-    width: 400px;
-    height: 100px;
-    display: flex;
-}
-.dia img,.mes img,.anio img{
-    height: 35px;
-   
-}
-
-.slash img{
-    height: 44px;
-}
-.hora img,.dospuntos img,.minutos img{
-    height: 35px;
-}
-
-.tiempo img{
-    height: 45px;
-    position: relative;
-    top:4px;
-    left: 10px;
-}
-
-
-.contenedor-sot-ping{
-    position: absolute;
-    /* background-color: yellow; */
-    top: 1525px;
-    left: 1200px;
-    /* width: 400px; */
-    /* height: 50px; */
-    display: table;
-}
-.contenedor-sot-ping img{
-    width: 26px;
-}
-
-.contenedor-barraInicio-ping{
-    position: absolute;
-    /* background-color: yellowgreen; */
-    bottom: 50px;
-    right:  371px;
-    /* height: 30px; */
-    width: 200px;
-    /* border: 1px solid red; */
-    text-align: left;
-}
-.barraInicio-hora{
-    /* margin-bottom: 8px; */
-    display: flex;
-    justify-content: end;
-}
-.barraTareaDospuntos{
-    width: 10px !important;
-    margin-right: 5px;
-    margin-left:  5px;
-    /* border:1px solid red; */
-}
-.barraInicio-hora img{
-    width: 18px;
-    height: 30px;
-    margin-bottom: 18px;
-}
-.barraInicio-fecha{
-    display: flex;
-    justify-content: end;
-}
-.barraInicio-fecha img{
-    width: 18px;
-    margin-bottom: 7px;
-    /* height: 28px; */
-}
 
 
 select{
@@ -445,6 +247,94 @@ select{
     /* background-color: yellow; */
     margin: 5px;
 }
+
+
+
+
+/* INICIO __________DP 16  SERIE*/
+
+.contenedor_dp16{
+    position: relative;
+    display:inline-flex;
+    
+  
+    
+}
+.contenedor_dp16 .contenedor_img_sot_dp16 {
+    position: absolute;
+    /* border: 1px solid red; */
+    z-index: 10;
+    bottom: 690px;
+    /* left: 500px; */
+    left: 617px;
+    transform: rotate(1deg);
+}
+
+
+
+
+.contenedor_dp16 .contenedor_img_sot_dp16 img{
+    height: 34px;
+    /* width: 20px; */
+    /* -webkit-filter: grayscale(1);
+    filter: grayscale(); */
+}
+
+.contenedor_img_fecha{
+    /* border: 1px solid red; */
+    position: absolute;
+    /* border: 1px solid red; */
+    z-index: 10;
+    bottom: 930px;
+    /* left: 500px; */
+    left: 212px;
+    transform: rotate(1deg);
+}
+
+.contenedor_img_hora{
+    position: absolute;
+    /* border: 1px solid red; */
+
+    z-index: 10;
+    bottom: 800px;
+    /* left: 500px; */
+    left: 212px;
+}
+.contenedor_img_hora_inicio{
+    position: absolute;
+    /* border: 1px solid red; */
+
+    z-index: 10;
+    bottom: 210px;
+    /* left: 500px; */
+    right: 132px;
+}
+
+.contenedor_img_hora_inicio img{
+    height: 28px;
+    width: 15px;
+}
+.contenedor_img_fecha_inicio{
+    position: absolute;
+    /* border: 1px solid rgb(14, 214, 74); */
+
+    z-index: 10;
+    bottom: 165px;
+    /* left: 500px; */
+    right: 132px;
+}
+
+.contenedor_img_fecha_inicio img{
+    height: 28px;
+    width: 15px;
+}
+
+
+/* FIN DP __________16  SERIE*/
+
+
+
+
 
 
 /* INICIO __________DP 15  SERIE*/
