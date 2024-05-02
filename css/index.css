@@ -373,15 +373,73 @@ select{
 
 
         .contenedor_dp16 .contenedor_hora_menu_dp16{
-            border: 1px solid rgb(29, 183, 210);
+            /* border: 1px solid rgb(210, 29, 29); */
             position: absolute;
+            bottom: 83px;
+            right: 49px;
+        }
+
+        .contenedor_dp16 .contenedor_hora_menu_dp16 img{
+            height: 11px;
+            width: 7px;
+        }
+        .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(4){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(3){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(2){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_hora_menu_dp16 img:nth-child(1){
+            margin-right: -4px;
         }
 
 
         .contenedor_dp16 .contenedor_fecha_menu_dp16{
-            border: 1px solid rgb(2, 148, 48);
+            /* border: 1px solid rgb(2, 148, 48); */
             position: absolute;
+            bottom: 65px;
+            right: 49px;
+            transform: rotate(1deg);
         }
+
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img{
+            height: 11px;
+            width: 6px;
+        }
+
+
+      
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(9){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(8){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(7){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(6){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(5){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(4){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(3){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(2){
+            margin-right: -4px;
+        }
+        .contenedor_dp16 .contenedor_fecha_menu_dp16 img:nth-child(1){
+            margin-right: -4px;
+        }
+
 
 /* FIN DP __________16  SERIE*/
 
