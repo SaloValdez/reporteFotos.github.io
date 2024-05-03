@@ -91,7 +91,7 @@ ol span {
                         height: 100%;
                         backdrop-filter: blur(4px);
                         z-index: 20;
-                        /* display: none; */
+                        display: none;
                         position: fixed;
                     
                     
@@ -784,6 +784,150 @@ select{
         }
 /* FIN _____________DP27 */
 
+/*INICIO __________DP21*/
+.contenedor_dp21{
+    position: relative;
+    display:inline-flex;
+}
+
+.contenedor_dp21 .contenedor_fecha_dp21{
+    position: absolute;
+    top: 307px;
+    left: 420px;
+    display: flex;
+}
+
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test{
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(9){
+ margin-right: -4px;
+}
+
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(8){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(7){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(6){
+    margin-right: -8px;
+    margin-bottom: -2px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(5){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(4){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(3){
+    margin-right: -8px;
+    margin-bottom: -2px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(2){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .fecha-test img:nth-child(1){
+    margin-right: -4px;
+}
+
+
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test img:nth-child(6){
+    margin-right: -7px;
+    margin-left: 5px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test img:nth-child(4){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test img:nth-child(3){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test img:nth-child(2){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor_fecha_dp21 .hora-test img:nth-child(1){
+    margin-right: -4px;
+}
+
+.contenedor_dp21 .contenedor-velocidad-dp21{
+    /* border: 1px solid yellow; */
+    position: absolute;
+    top: 450px;
+    width: 870px;
+    left: 160px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.contenedor_dp21 .contenedor-fecha-menu{
+    /* border:  1px solid red; */
+    position: absolute;
+    right: 65px;
+    bottom: 44px;
+
+    transform: rotate(1deg);
+
+}
+
+.contenedor_dp21 .contenedor-fecha-menu img{
+    height: 15px;
+}
+
+.contenedor_dp21 .contenedor-fecha-menu .hora-menu{
+    text-align: right;
+
+}
+
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu{
+    text-align: right;
+}
+
+
+.contenedor_dp21 .contenedor-fecha-menu .hora-menu img:nth-child(4){
+    margin-right: -3px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .hora-menu img:nth-child(3){
+    margin-right: -3px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .hora-menu img:nth-child(2){
+    margin-right: -3px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .hora-menu img:nth-child(1){
+    margin-right: -3px;
+}
+
+
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(9){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(8){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(7){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(6){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(5){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(4){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(3){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(2){
+    margin-right: -4px;
+}
+.contenedor_dp21 .contenedor-fecha-menu .fecha-menu img:nth-child(1){
+    margin-right: -4px;
+}
+
+/* FIN _____________DP21 */
 
 
 

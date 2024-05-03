@@ -26,7 +26,7 @@ $(".tipoTrabajo").change(function() {
                     $(".DpFotos").prop('disabled', false);
                         
                             var tipoAtencion = {
-                                        "sel":"Seleccione...",
+                                        "0":"Seleccione dp...",
                                         "dp01":"DP01",
                                         "dp03": "DP 03",
                                         "dp15":"DP 15",
@@ -82,36 +82,52 @@ $btnIndicacionesCerrar.addEventListener("click", () => {
 
 const $boton = document.querySelector("#btnGenerarReporte ");
 $boton.addEventListener("click", () => {
+
     var txtSot = $('#sotReporte').val();
 
- 
+    var tipoTrabajo = $('#tipoTrabajo').val();
+    var dpFotos = $('#DpFotos').val();
     // var  numeros = '77765439';
     let arraySOT = txtSot.split('');
 
-    // console.log(arraySOT);
 
     valorDP = $('#DpFotos').val();
 
 
-    // console.log(valorDP);
 
-    if(txtSot.length == ''){
+    if(tipoTrabajo == 0){
+        alert('Seleccione Tipo trabajo');
+        $('#sotReporte').val();
+    }else if(dpFotos == 0){
+        alert('Seleccione dp');
+        $('#sotReporte').val();
+    }else if(txtSot.length !=8){
+        alert('Ingrese 8 digitos.');
+        $('#sotReporte').val();
+    }else if(txtSot.length == ''){
         alert('Ingresar Sot');
     
     }else if(valorDP =='dp01'){
         generar_dp01(arraySOT);
+        $('#sotReporte').val('');
     } else if(valorDP =='dp03'){
         generar_dp03(arraySOT);
+        $('#sotReporte').val('');
     }  else  if(valorDP =='dp16'){
         generar_dp16(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP =='dp27'){
         generar_dp27(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP =='dp15'){
         generar_dp15(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP =='dp17'){
         generar_dp17(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP =='dp40'){
         generar_dp40(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP =='dp41'){
         generar_dp41(arraySOT);
     }else if(valorDP =='1play'){
@@ -120,6 +136,7 @@ $boton.addEventListener("click", () => {
         generar_dp16(arraySOT);
         generar_dp15(arraySOT);
         generar_dp17(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP == '2playtel'){
         generar_dp03(arraySOT);
         generar_dp01(arraySOT);
@@ -127,6 +144,7 @@ $boton.addEventListener("click", () => {
         generar_dp15(arraySOT);
         generar_dp17(arraySOT);
         generar_dp27(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP == '2playIptv'){
         generar_dp03(arraySOT);
         generar_dp01(arraySOT);
@@ -135,6 +153,7 @@ $boton.addEventListener("click", () => {
         generar_dp17(arraySOT);
         generar_dp40(arraySOT);
         generar_dp41(arraySOT);
+        $('#sotReporte').val('');
     }else if(valorDP == '3play'){
         generar_dp01(arraySOT);
         generar_dp03(arraySOT);
@@ -149,7 +168,7 @@ $boton.addEventListener("click", () => {
 
 $('#txtSotGenerando').val(txtSot);
 
-   $('#sotReporte').val('');
+  
  
 
 
@@ -166,6 +185,10 @@ $('#txtSotGenerando').val(txtSot);
 
 
 
+
+function generar_dp21(){
+    
+}
 
 
 
