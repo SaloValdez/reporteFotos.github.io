@@ -4,21 +4,18 @@ $(document).ready(function() {
     $(".DpFotos").prop('disabled', true);
     
 
-    generar_dp21();
-    $('#velocidad_plan').hide()
+  
 
 });
 
 
 
-function mostrarIndicaciones(){
-    
-}
-
 
 
 
 $(".tipoTrabajo").change(function() {
+
+
     var valorSelect =  $(this).val();
             // alert(valorSelect);
             console.log(valorSelect);
@@ -35,7 +32,6 @@ $(".tipoTrabajo").change(function() {
                                         "dp27":"DP 27",
                                         "dp40":"DP 40",
                                         "dp41":"DP 41",
-                                        "dp21":"DP 21",
                                         "1play":"(1play) Internet",
                                         "2playtel":"(2play) Internet + Telef.",
                                         "2playIptv":"(2play) Internet + Iptv",
@@ -48,8 +44,10 @@ $(".tipoTrabajo").change(function() {
 
                 }else if (valorSelect == "manto"){
                     $(".DpFotos").prop('disabled', false);
-                    var tipoAtencion = {"sel":"Seleccione...","pc02":"Cambio de Acometida",
-                    };
+                    var tipoAtencion = {"0":"Seleccione un dp...",
+                                        "dp21":"dp21 - Prueba de servicios",
+                                        "fi07":"Fi07 - Prueba de servicios",
+                                        };
                 }else{
                     $(".DpFotos").prop('disabled', true);
                 }
@@ -58,6 +56,12 @@ $(".tipoTrabajo").change(function() {
                     console.log(index + ": " + value);
                     $(".DpFotos").append('<option value="'+index+'">'+value+'</option>');
                 }); 
+
+
+
+
+
+
 });
 
 
@@ -68,12 +72,17 @@ $(".tipoTrabajo").change(function() {
 
 $(".DpFotos").change(function() {
     var valorDp =  $(this).val();
-    // alert(valorDp)
+
 
     if(valorDp =='dp21'){
-        $('#velocidad_plan').show();
-    }else{
-        $('#velocidad_plan').hide();
+        $('#mostrarVelocidad').empty();
+        $('#mostrarVelocidad').append( "<input id='velocidad_plan' type='text' value='000'>" );
+        
+    }else if(valorDp =='fi07'){
+        $('#mostrarVelocidad').empty();
+        $('#mostrarVelocidad').append( "<input id='velocidad_plan' type='text' value='000'>" );
+    }else {
+        $('#mostrarVelocidad').empty();
     }
       
 });
@@ -110,6 +119,20 @@ $btnIndicacionesCerrar.addEventListener("click", () => {
 const $boton = document.querySelector("#btnGenerarReporte ");
 $boton.addEventListener("click", () => {
 
+    if($("#velocidad_plan").length == 0) {
+
+        
+      }else{
+            valorVelocidadPlan = $('#velocidad_plan').val();
+            if(valorVelocidadPlan.length==0){
+                alert('Por vavor ingrese velocidad plan.');
+                return false;
+            }
+      }
+
+
+
+
     var txtSot = $('#sotReporte').val();
 
     var tipoTrabajo = $('#tipoTrabajo').val();
@@ -134,62 +157,75 @@ $boton.addEventListener("click", () => {
     }else if(txtSot.length == ''){
         alert('Ingresar Sot');
     
-    }else if(valorDP =='dp01'){
-        generar_dp01(arraySOT);
-        $('#sotReporte').val('');
-    } else if(valorDP =='dp03'){
-        generar_dp03(arraySOT);
-        $('#sotReporte').val('');
-    }  else  if(valorDP =='dp16'){
-        generar_dp16(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP =='dp27'){
-        generar_dp27(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP =='dp15'){
-        generar_dp15(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP =='dp17'){
-        generar_dp17(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP =='dp40'){
-        generar_dp40(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP =='dp41'){
-        generar_dp41(arraySOT);
-    }else if(valorDP =='1play'){
-        generar_dp03(arraySOT);
-        generar_dp01(arraySOT);
-        generar_dp16(arraySOT);
-        generar_dp15(arraySOT);
-        generar_dp17(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP == '2playtel'){
-        generar_dp03(arraySOT);
-        generar_dp01(arraySOT);
-        generar_dp16(arraySOT);
-        generar_dp15(arraySOT);
-        generar_dp17(arraySOT);
-        generar_dp27(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP == '2playIptv'){
-        generar_dp03(arraySOT);
-        generar_dp01(arraySOT);
-        generar_dp16(arraySOT);
-        generar_dp15(arraySOT);
-        generar_dp17(arraySOT);
-        generar_dp40(arraySOT);
-        generar_dp41(arraySOT);
-        $('#sotReporte').val('');
-    }else if(valorDP == '3play'){
-        generar_dp01(arraySOT);
-        generar_dp03(arraySOT);
-        generar_dp16(arraySOT);
-        generar_dp15(arraySOT);
-        generar_dp17(arraySOT);
-        generar_dp40(arraySOT);
-        generar_dp41(arraySOT);
-        generar_dp27(arraySOT);
+    }else{
+                if(valorDP =='dp01'){
+                    generar_dp01(arraySOT);
+                    $('#sotReporte').val('');
+                } else if(valorDP =='dp03'){
+                    generar_dp03(arraySOT);
+                    $('#sotReporte').val('');
+                }  else  if(valorDP =='dp16'){
+                    generar_dp16(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP =='dp27'){
+                    generar_dp27(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP =='dp15'){
+                    generar_dp15(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP =='dp17'){
+                    generar_dp17(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP =='dp40'){
+                    generar_dp40(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP =='dp41'){
+                    generar_dp41(arraySOT);
+                }else if(valorDP =='1play'){
+                    generar_dp03(arraySOT);
+                    generar_dp01(arraySOT);
+                    generar_dp16(arraySOT);
+                    generar_dp15(arraySOT);
+                    generar_dp17(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP == '2playtel'){
+                    generar_dp03(arraySOT);
+                    generar_dp01(arraySOT);
+                    generar_dp16(arraySOT);
+                    generar_dp15(arraySOT);
+                    generar_dp17(arraySOT);
+                    generar_dp27(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP == '2playIptv'){
+                    generar_dp03(arraySOT);
+                    generar_dp01(arraySOT);
+                    generar_dp16(arraySOT);
+                    generar_dp15(arraySOT);
+                    generar_dp17(arraySOT);
+                    generar_dp40(arraySOT);
+                    generar_dp41(arraySOT);
+                    $('#sotReporte').val('');
+                }else if(valorDP == '3play'){
+                    generar_dp01(arraySOT);
+                    generar_dp03(arraySOT);
+                    generar_dp16(arraySOT);
+                    generar_dp15(arraySOT);
+                    generar_dp17(arraySOT);
+                    generar_dp40(arraySOT);
+                    generar_dp41(arraySOT);
+                    generar_dp27(arraySOT);
+                }else if(valorDP == 'dp21'){
+                    
+                    generar_dp21(valorVelocidadPlan);
+
+                }else if(valorDP == 'fi07'){
+                    generar_dp21(valorVelocidadPlan,arraySOT);
+                    // generar_dp01(arraySOT);
+                    // generar_dp21(valorVelocidadPlan,arraySOT);
+                    // generar_dp15(arraySOT);
+                    // generar_dp16(arraySOT);
+
+                }
     }
 
 
@@ -213,18 +249,25 @@ $('#txtSotGenerando').val(txtSot);
 
 
 
-function generar_dp21(){
-            // velociadd
+function generar_dp21(valorVelocidad,arraySOT){
 
-           var vel = '994';
-            let arr = vel.split("");
-            incremento = 0;
-            for (x=0; x <arr.length;  x++  ){
-                console.log(arr[x]);
+    sotNombre = arraySOT.toString();
+
+            // console.log(sotNombre);
+            // return false;
+
+            $objetivo = document.querySelector("#contenedor_dp21");
+            $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
+
+            let valorPlan = valorVelocidad.split("");
+
+
+            for (x=0; x <valorPlan.length;  x++  ){
+                console.log(valorPlan[x]);
           
-                    $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+arr[x]+".png'>" );
+                    $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
 
-                    $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/"+arr[x]+".png'>" );
+                    $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
             }
             $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/punto.png'>" );
             $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/3.png'>" );
@@ -234,7 +277,7 @@ function generar_dp21(){
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/7.png'>" );
 
               
-
+            // return false;
 
 
             var d = new Date();
@@ -317,7 +360,28 @@ function generar_dp21(){
         $("#fecha-test-menu8").attr("src","./img/reportes/numerosDp21/barra/"+anio4+".png");
 
         // velocidad
-        $("#descarga1").attr("src","./img/reportes/numerosDp21/"+dia1+".png");
+        // $("#descarga1").attr("src","./img/reportes/numerosDp21/"+dia1+".png");
+
+
+        html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
+        .then(canvas => {
+        // Cuando se resuelva la promesa traerá el canvas
+        $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+        let enlace = document.createElement('a');
+
+   
+
+        // return false;
+        enlace.download = "dp21_"+sotNombre.replace(/\,/g,'')+".png"
+        // Convertir la imagen a Base64
+        enlace.href = canvas.toDataURL();
+        // Hacer click en él
+        enlace.click();
+});
+
+
+
+
 
 
 
