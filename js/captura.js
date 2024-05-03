@@ -5,7 +5,7 @@ $(document).ready(function() {
     
 
     generar_dp21();
-
+    $('#velocidad_plan').hide()
 
 });
 
@@ -35,6 +35,7 @@ $(".tipoTrabajo").change(function() {
                                         "dp27":"DP 27",
                                         "dp40":"DP 40",
                                         "dp41":"DP 41",
+                                        "dp21":"DP 21",
                                         "1play":"(1play) Internet",
                                         "2playtel":"(2play) Internet + Telef.",
                                         "2playIptv":"(2play) Internet + Iptv",
@@ -58,6 +59,32 @@ $(".tipoTrabajo").change(function() {
                     $(".DpFotos").append('<option value="'+index+'">'+value+'</option>');
                 }); 
 });
+
+
+
+
+
+
+
+$(".DpFotos").change(function() {
+    var valorDp =  $(this).val();
+    // alert(valorDp)
+
+    if(valorDp =='dp21'){
+        $('#velocidad_plan').show();
+    }else{
+        $('#velocidad_plan').hide();
+    }
+      
+});
+
+
+
+
+
+
+
+
 
 
 const $btnIndicaciones = document.querySelector("#btnIndicaciones");
@@ -187,6 +214,29 @@ $('#txtSotGenerando').val(txtSot);
 
 
 function generar_dp21(){
+            // velociadd
+
+           var vel = '994';
+            let arr = vel.split("");
+            incremento = 0;
+            for (x=0; x <arr.length;  x++  ){
+                console.log(arr[x]);
+          
+                    $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+arr[x]+".png'>" );
+
+                    $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/"+arr[x]+".png'>" );
+            }
+            $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/punto.png'>" );
+            $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/3.png'>" );
+            $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/5.png'>" );
+            $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/punto.png'>" );
+            $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/5.png'>" );
+            $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/7.png'>" );
+
+              
+
+
+
             var d = new Date();
             var month = d.getMonth()+1;
             var day = d.getDate();
@@ -255,7 +305,7 @@ function generar_dp21(){
         $("#fecha-test_anio2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio2+".png");
         $("#fecha-test_anio3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio3+".png");
         $("#fecha-test_anio4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio4+".png");
-// img\reportes\numerosDp21\fecha_test\2.png
+
         // fecha  test barra
         $("#fecha-test-menu1").attr("src","./img/reportes/numerosDp21/barra/"+dia1+".png");
         $("#fecha-test-menu2").attr("src","./img/reportes/numerosDp21/barra/"+dia2+".png");
@@ -265,6 +315,11 @@ function generar_dp21(){
         $("#fecha-test-menu6").attr("src","./img/reportes/numerosDp21/barra/"+anio2+".png");
         $("#fecha-test-menu7").attr("src","./img/reportes/numerosDp21/barra/"+anio3+".png");
         $("#fecha-test-menu8").attr("src","./img/reportes/numerosDp21/barra/"+anio4+".png");
+
+        // velocidad
+        $("#descarga1").attr("src","./img/reportes/numerosDp21/"+dia1+".png");
+
+
 
 
 

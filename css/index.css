@@ -91,7 +91,7 @@ ol span {
                         height: 100%;
                         backdrop-filter: blur(4px);
                         z-index: 20;
-                        display: none;
+                        /* display: none; */
                         position: fixed;
                     
                     
