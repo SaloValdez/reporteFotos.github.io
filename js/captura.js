@@ -4,7 +4,7 @@ $(document).ready(function() {
     $(".DpFotos").prop('disabled', true);
     
 
-
+    generar_dp21();
 
 
 });
@@ -187,12 +187,92 @@ $('#txtSotGenerando').val(txtSot);
 
 
 function generar_dp21(){
-    
+            var d = new Date();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+
+            var hora = d.getHours();
+            var minutos = d.getMinutes();
+
+            hora = hora.toString();
+            minutos = minutos.toString();
+
+            if(hora.length == 1){
+                    hora  = '0'+ hora;
+            }
+            if(minutos.length == 1){
+                minutos  = '0'+ minutos;
+            }
+            horaCompleta = hora +':'+ minutos;
+
+            cadenaHora = horaCompleta.toString();
+
+            hora1= cadenaHora.substr(0,1); // 2
+            hora2= cadenaHora.substr(1,1); // 0
+            hora3= cadenaHora.substr(-2,1); // 2
+            hora4= cadenaHora.substr(-1,3); // 4
+
+        // hora TEST  img\reportes\numerosDp21\fecha_test\1.png
+        $("#hora-test-1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
+        $("#hora-test-2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
+        $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
+        $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
+
+
+        // hora TEST BARRA
+        $("#hora-test-menu1").attr("src","./img/reportes/numerosDp21/barra/"+ hora1+".png");
+        $("#hora-test-menu2").attr("src","./img/reportes/numerosDp21/barra/"+ hora2+".png");
+        $("#hora-test-menu3").attr("src","./img/reportes/numerosDp21/barra/"+ hora3+".png");
+        $("#hora-test-menu4").attr("src","./img/reportes/numerosDp21/barra/"+ hora4+".png");
+
+        var anio = d.getFullYear();
+        var mes = (month<10 ? '0' : '') + month;
+        var dia = (day<10 ? '0' : '') + day;
+
+        cadenaAnio = anio.toString();
+        cadenaMes = mes.toString();
+        cadenaDia = dia.toString();
+        // console.log(cadena);
+        anio1= cadenaAnio.substr(0,1); // 2
+        anio2= cadenaAnio.substr(1,1); // 0
+        anio3= cadenaAnio.substr(-2,1); // 2
+        anio4= cadenaAnio.substr(3,3); // 4
+        
+        mes1= cadenaMes.substr(0,1); // 2
+        mes2= cadenaMes.substr(1,1); // 0
+
+
+        dia1= cadenaDia.substr(0,1); // 2
+        dia2= cadenaDia.substr(1,1); // 0
+
+
+        // fecha test 
+        $("#fecha-test_dia1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ dia1+".png");
+        $("#fecha-test_dia2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ dia2+".png");
+        $("#fecha-test_mes1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ mes1+".png");
+        $("#fecha-test_mes2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ mes2+".png");
+        $("#fecha-test_anio1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio1+".png");
+        $("#fecha-test_anio2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio2+".png");
+        $("#fecha-test_anio3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio3+".png");
+        $("#fecha-test_anio4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio4+".png");
+// img\reportes\numerosDp21\fecha_test\2.png
+        // fecha  test barra
+        $("#fecha-test-menu1").attr("src","./img/reportes/numerosDp21/barra/"+dia1+".png");
+        $("#fecha-test-menu2").attr("src","./img/reportes/numerosDp21/barra/"+dia2+".png");
+        $("#fecha-test-menu3").attr("src","./img/reportes/numerosDp21/barra/"+mes1+".png");
+        $("#fecha-test-menu4").attr("src","./img/reportes/numerosDp21/barra/"+mes2+".png");
+        $("#fecha-test-menu5").attr("src","./img/reportes/numerosDp21/barra/"+anio1+".png");
+        $("#fecha-test-menu6").attr("src","./img/reportes/numerosDp21/barra/"+anio2+".png");
+        $("#fecha-test-menu7").attr("src","./img/reportes/numerosDp21/barra/"+anio3+".png");
+        $("#fecha-test-menu8").attr("src","./img/reportes/numerosDp21/barra/"+anio4+".png");
+
+
+
 }
 
 
 
-
+// dp 16
 function generar_dp16(arraySot){
     $objetivo2 = document.querySelector("#contenedor_dp16");
     $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
@@ -230,6 +310,7 @@ function generar_dp16(arraySot){
         hora2= cadenaHora.substr(1,1); // 0
         hora3= cadenaHora.substr(-2,1); // 2
         hora4= cadenaHora.substr(-1,3); // 4
+
          // hora CMD PING
         $("#hora_cmd_numero1").attr("src","./img/reportes/numerosDp16/"+ hora1+".png");
         $("#hora_cmd_numero2").attr("src","./img/reportes/numerosDp16/"+ hora2+".png");
