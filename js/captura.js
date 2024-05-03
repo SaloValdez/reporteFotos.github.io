@@ -53,7 +53,7 @@ $(".tipoTrabajo").change(function() {
                 }
                 $(".DpFotos").empty();
                 $.each(tipoAtencion, function(index, value) {
-                    console.log(index + ": " + value);
+                    // console.log(index + ": " + value);
                     $(".DpFotos").append('<option value="'+index+'">'+value+'</option>');
                 }); 
 
@@ -256,7 +256,7 @@ function generar_dp21(valorVelocidad,arraySOT){
             $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
             let valorPlan = valorVelocidad.split("");
             for (x=0; x <valorPlan.length;  x++  ){
-                console.log(valorPlan[x]);
+                // console.log(valorPlan[x]);
           
                     $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
 
@@ -269,9 +269,6 @@ function generar_dp21(valorVelocidad,arraySOT){
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/5.png'>" );
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/7.png'>" );
 
-              
-            // return false;
-
 
             var d = new Date();
             var month = d.getMonth()+1;
@@ -279,6 +276,25 @@ function generar_dp21(valorVelocidad,arraySOT){
 
             var hora = d.getHours();
             var minutos = d.getMinutes();
+
+
+                // hora test
+                    jornada_test = hora >=12 ? 'PM' : 'AM';
+                    horas_test = hora%12;
+
+                    horas_test  = ('0' + horas_test).slice(-2);
+                    minuto_test  = ('0' + minutos).slice(-2);
+
+
+                     convrHora =   horas_test + minuto_test;
+
+
+                    horaString = convrHora.toString();
+                     alert(convrHora.substr(0,1));
+                     alert(convrHora.substr(1,1));
+                     alert(convrHora.substr(-2,1));
+                     alert(convrHora.substr(-1,3));
+                // fin hora test
 
             hora = hora.toString();
             minutos = minutos.toString();
@@ -299,10 +315,11 @@ function generar_dp21(valorVelocidad,arraySOT){
             hora4= cadenaHora.substr(-1,3); // 4
 
         // hora TEST  img\reportes\numerosDp21\fecha_test\1.png
-        $("#hora-test-1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
-        $("#hora-test-2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora2+".png");
-        $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora3+".png");
-        $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora4+".png");
+        $("#hora-test-1").attr("src","./img/reportes/numerosDp21/fecha_test/"+convrHora.substr(0,1)+".png");
+        $("#hora-test-2").attr("src","./img/reportes/numerosDp21/fecha_test/"+convrHora.substr(1,1)+".png");
+        $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ convrHora.substr(-2,1)+".png");
+        $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+convrHora.substr(-1,3)+".png");
+        $("#hora-test-ampm").attr("src","./img/reportes/numerosDp21/fecha_test/"+ jornada_test+".png");
 
 
         // hora TEST BARRA
