@@ -251,17 +251,10 @@ $('#txtSotGenerando').val(txtSot);
 
 function generar_dp21(valorVelocidad,arraySOT){
 
-    sotNombre = arraySOT.toString();
-
-            // console.log(sotNombre);
-            // return false;
-
+            sotNombre = arraySOT.toString();
             $objetivo = document.querySelector("#contenedor_dp21");
             $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
-
             let valorPlan = valorVelocidad.split("");
-
-
             for (x=0; x <valorPlan.length;  x++  ){
                 console.log(valorPlan[x]);
           
@@ -307,9 +300,9 @@ function generar_dp21(valorVelocidad,arraySOT){
 
         // hora TEST  img\reportes\numerosDp21\fecha_test\1.png
         $("#hora-test-1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
-        $("#hora-test-2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
-        $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
-        $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora1+".png");
+        $("#hora-test-2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora2+".png");
+        $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora3+".png");
+        $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ hora4+".png");
 
 
         // hora TEST BARRA
