@@ -14,8 +14,6 @@ $(document).ready(function() {
 
 
 $(".tipoTrabajo").change(function() {
-
-
     var valorSelect =  $(this).val();
             // alert(valorSelect);
             console.log(valorSelect);
@@ -24,14 +22,14 @@ $(".tipoTrabajo").change(function() {
                         
                             var tipoAtencion = {
                                         "0":"Seleccione dp...",
-                                        "dp01":"DP01",
-                                        "dp03": "DP 03",
-                                        "dp15":"DP 15",
-                                        "dp16":"DP 16",
-                                        "dp17":"DP 17",
-                                        "dp27":"DP 27",
-                                        "dp40":"DP 40",
-                                        "dp41":"DP 41",
+                                        "dp01":"Dp01 - Fachada",
+                                        "dp03":"Dp03 - Fat",
+                                        "dp15":"Dp15 - Niveles",
+                                        "dp16":"Dp16 - Pin/cmd",
+                                        "dp17":"Dp17 - Config. Wifi",
+                                        "dp27":"Dp27 - Telefono",
+                                        "dp40":"Dp40 - Config. Red Iptv",
+                                        "dp41":"Dp41 - Resolucion Iptv",
                                         "1play":"(1play) Internet",
                                         "2playtel":"(2play) Internet + Telef.",
                                         "2playIptv":"(2play) Internet + Iptv",
@@ -45,8 +43,8 @@ $(".tipoTrabajo").change(function() {
                 }else if (valorSelect == "manto"){
                     $(".DpFotos").prop('disabled', false);
                     var tipoAtencion = {"0":"Seleccione un dp...",
-                                        "dp21":"dp21 - Prueba de servicios",
-                                        "fi07":"Fi07 - Prueba de servicios",
+                                            "fi07":"Fi07 - Prueba de servicios",
+                                            "dp21":"Dp21 - Test Velocidad",
                                         };
                 }else{
                     $(".DpFotos").prop('disabled', true);
@@ -73,14 +71,14 @@ $(".tipoTrabajo").change(function() {
 $(".DpFotos").change(function() {
     var valorDp =  $(this).val();
 
-
     if(valorDp =='dp21'){
         $('#mostrarVelocidad').empty();
-        $('#mostrarVelocidad').append( "<input id='velocidad_plan' type='text' value='000'>" );
+        $('#mostrarVelocidad').append( "<div class='contVel' ><input id='velocidad_plan' type='text' value=''> </div>" );
+   
         
     }else if(valorDp =='fi07'){
         $('#mostrarVelocidad').empty();
-        $('#mostrarVelocidad').append( "<input id='velocidad_plan' type='text' value='000'>" );
+        $('#mostrarVelocidad').append( "<div class='contVel' ><input id='velocidad_plan' type='text' value=''> </div>" );
     }else {
         $('#mostrarVelocidad').empty();
     }
@@ -255,20 +253,18 @@ function generar_dp21(valorVelocidad,arraySOT){
             $objetivo = document.querySelector("#contenedor_dp21");
             $contenedorCanvas = document.querySelector("#contenedorCanvas"); // En dónde ponemos el elemento canvas
             let valorPlan = valorVelocidad.split("");
-            for (x=0; x <valorPlan.length;  x++  ){
-                // console.log(valorPlan[x]);
-          
-                    $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
 
+            for (x=0; x <valorPlan.length;  x++  ){
+                    $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
                     $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/"+valorPlan[x]+".png'>" );
             }
+
             $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/punto.png'>" );
             $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/3.png'>" );
             $('#contenedor-descarga').append( "<img   src='./img/reportes/numerosDp21/5.png'>" );
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/punto.png'>" );
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/5.png'>" );
             $('#contenedor-subida').append( "<img   src='./img/reportes/numerosDp21/7.png'>" );
-
 
             var d = new Date();
             var month = d.getMonth()+1;
@@ -277,23 +273,13 @@ function generar_dp21(valorVelocidad,arraySOT){
             var hora = d.getHours();
             var minutos = d.getMinutes();
 
-
                 // hora test
                     jornada_test = hora >=12 ? 'PM' : 'AM';
                     horas_test = hora%12;
-
                     horas_test  = ('0' + horas_test).slice(-2);
                     minuto_test  = ('0' + minutos).slice(-2);
-
-
                      convrHora =   horas_test + minuto_test;
-
-
                     horaString = convrHora.toString();
-                     alert(convrHora.substr(0,1));
-                     alert(convrHora.substr(1,1));
-                     alert(convrHora.substr(-2,1));
-                     alert(convrHora.substr(-1,3));
                 // fin hora test
 
             hora = hora.toString();
@@ -305,8 +291,8 @@ function generar_dp21(valorVelocidad,arraySOT){
             if(minutos.length == 1){
                 minutos  = '0'+ minutos;
             }
-            horaCompleta = hora +':'+ minutos;
 
+            horaCompleta = hora +':'+ minutos;
             cadenaHora = horaCompleta.toString();
 
             hora1= cadenaHora.substr(0,1); // 2
@@ -320,7 +306,6 @@ function generar_dp21(valorVelocidad,arraySOT){
         $("#hora-test-3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ convrHora.substr(-2,1)+".png");
         $("#hora-test-4").attr("src","./img/reportes/numerosDp21/fecha_test/"+convrHora.substr(-1,3)+".png");
         $("#hora-test-ampm").attr("src","./img/reportes/numerosDp21/fecha_test/"+ jornada_test+".png");
-
 
         // hora TEST BARRA
         $("#hora-test-menu1").attr("src","./img/reportes/numerosDp21/barra/"+ hora1+".png");
@@ -347,8 +332,6 @@ function generar_dp21(valorVelocidad,arraySOT){
 
         dia1= cadenaDia.substr(0,1); // 2
         dia2= cadenaDia.substr(1,1); // 0
-
-
         // fecha test 
         $("#fecha-test_dia1").attr("src","./img/reportes/numerosDp21/fecha_test/"+ dia1+".png");
         $("#fecha-test_dia2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ dia2+".png");
@@ -358,7 +341,6 @@ function generar_dp21(valorVelocidad,arraySOT){
         $("#fecha-test_anio2").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio2+".png");
         $("#fecha-test_anio3").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio3+".png");
         $("#fecha-test_anio4").attr("src","./img/reportes/numerosDp21/fecha_test/"+ anio4+".png");
-
         // fecha  test barra
         $("#fecha-test-menu1").attr("src","./img/reportes/numerosDp21/barra/"+dia1+".png");
         $("#fecha-test-menu2").attr("src","./img/reportes/numerosDp21/barra/"+dia2+".png");
@@ -369,35 +351,23 @@ function generar_dp21(valorVelocidad,arraySOT){
         $("#fecha-test-menu7").attr("src","./img/reportes/numerosDp21/barra/"+anio3+".png");
         $("#fecha-test-menu8").attr("src","./img/reportes/numerosDp21/barra/"+anio4+".png");
 
-        // velocidad
-        // $("#descarga1").attr("src","./img/reportes/numerosDp21/"+dia1+".png");
-
-
         html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento
         .then(canvas => {
-        // Cuando se resuelva la promesa traerá el canvas
-        $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
-        let enlace = document.createElement('a');
+                // Cuando se resuelva la promesa traerá el canvas
+                $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                let enlace = document.createElement('a');
 
-   
-
-        // return false;
-        enlace.download = "dp21_"+sotNombre.replace(/\,/g,'')+".png"
-        // Convertir la imagen a Base64
-        enlace.href = canvas.toDataURL();
-        // Hacer click en él
-        enlace.click();
-});
-
-
-
-
-
-
-
-
-
+                // return false;
+                enlace.download = "dp21_"+sotNombre.replace(/\,/g,'')+".png"
+                // Convertir la imagen a Base64
+                enlace.href = canvas.toDataURL();
+                // Hacer click en él
+                enlace.click();
+        });
 }
+
+
+
 
 
 
@@ -495,18 +465,18 @@ function generar_dp16(arraySot){
 
             html2canvas($objetivo2) // Llamar a html2canvas y pasarle el elemento
             .then(canvas => {
-            // Cuando se resuelva la promesa traerá el canvas
-            $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
-            let enlace = document.createElement('a');
+                    // Cuando se resuelva la promesa traerá el canvas
+                    $contenedorCanvas.appendChild(canvas); // Lo agregamos como hijo del div
+                    let enlace = document.createElement('a');
 
-            sotNombre = arraySot.toString();
-            enlace.download = "dp16_"+sotNombre.replace(/\,/g,'')+".png"
+                    sotNombre = arraySot.toString();
+                    enlace.download = "dp16_"+sotNombre.replace(/\,/g,'')+".png"
 
-            // Convertir la imagen a Base64
-            enlace.href = canvas.toDataURL();
-            // Hacer click en él
-            enlace.click();
-    });
+                    // Convertir la imagen a Base64
+                    enlace.href = canvas.toDataURL();
+                    // Hacer click en él
+                    enlace.click();
+            });
 }
 
 

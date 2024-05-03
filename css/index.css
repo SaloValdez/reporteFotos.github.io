@@ -160,22 +160,25 @@ ol span {
                     .modal select{
                         font-weight: bold;
                         width: 300px;
+                        padding: 8px;
                     }
                     
                     .contenedor-cerrar{
                         /* background-color: #232424; */
                         display: flex;
                         justify-content: end;
+                        /* border: 1px solid red; */
                     }
                     .btn-cerrar{
-                        background-color: #3c454c;
-                        width: 25px;
-                        height: 25px;
+                        /* background-color: #3c454c; */
+                        /* width: 25px; */
+                        /* height: 25px; */
                         border-radius: 25px;
                         cursor: pointer;
-                        color: #f3f3f3;
+                        color: #04347c;
                         padding-top: 2px;
                         margin-top: -15px;
+                        font-size: 12px;
                     }
                     .btn-cerrar:hover{
                         background-color: #9b9999;
@@ -231,6 +234,33 @@ ol span {
                         /* border: 2px solid blue; */
                         margin-left: 25px;
                     }
+
+                    .modal .mostrarVelocidad input{
+                        width: 200px;
+                        /* border: 1px solid red; */
+                        position: relative;
+                        margin-left: 5px;
+                        padding: 6px;
+                    }
+                    .modal .mostrarVelocidad{
+                        position: relative;
+                        /* border: 1px solid blue; */
+                        width: 200px;
+                    }
+                    .modal .contVel::after {
+                        content: "Mbps";
+                        right: 3px;
+                        width: auto;
+                        height: 3px;
+                        top: 6px;
+                        /* display: table; */
+                        color: rgb(104, 104, 104);
+                        /* background-color: red; */
+                        position: absolute;
+                        /* display: none; */
+
+
+                      }
                    
 /* ------FIN modal */
    
