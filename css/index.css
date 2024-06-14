@@ -121,7 +121,7 @@ ol span {
                         padding: 10px;
                         overflow-x: hidden;
                         overflow-y: scroll;
-                        height: 430px;
+                        height: 350px;
                         
                     }
                     
@@ -162,6 +162,11 @@ ol span {
                         width: 300px;
                         padding: 8px;
                     }
+
+                    .modal select option[value="1play"],.modal select option[value="2playtel"],.modal select option[value="2playIptv"],.modal select option[value="3play"]{
+                        background-color: #d1f6ff;
+                    }
+
                     
                     .contenedor-cerrar{
                         /* background-color: #232424; */
@@ -170,9 +175,6 @@ ol span {
                         /* border: 1px solid red; */
                     }
                     .btn-cerrar{
-                        /* background-color: #3c454c; */
-                        /* width: 25px; */
-                        /* height: 25px; */
                         border-radius: 25px;
                         cursor: pointer;
                         color: #04347c;
@@ -196,11 +198,9 @@ ol span {
                     
                     .modal .contSot{
                         display: flex;
-                        /* background-color: yellowgreen;
-                        border: 1px solid rebeccapurple; */
-                       justify-content: center;
-                       margin-top: 5px;
-                       color: #727272;
+                        justify-content: center;
+                        margin-top: 5px;
+                        color: #727272;
                     }
                     .modal .txtSotGenerando{
                         text-align: center;
