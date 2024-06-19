@@ -214,14 +214,13 @@ $boton.addEventListener("click", () => {
                     generar_dp27(arraySOT);
                 }else if(valorDP == 'dp21'){
                     
-                    generar_dp21(valorVelocidadPlan);
+                    generar_dp21(valorVelocidadPlan,arraySOT);
 
                 }else if(valorDP == 'fi07'){
                     generar_dp21(valorVelocidadPlan,arraySOT);
-                    // generar_dp01(arraySOT);
-                    // generar_dp21(valorVelocidadPlan,arraySOT);
-                    // generar_dp15(arraySOT);
-                    // generar_dp16(arraySOT);
+                    generar_dp01(arraySOT);
+                    generar_dp15(arraySOT);
+                    generar_dp16(arraySOT);
 
                 }
     }
